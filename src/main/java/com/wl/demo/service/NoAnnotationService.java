@@ -1,4 +1,4 @@
 package com.wl.demo.service;
 
-public class NoAnnotationService {
+public interface NoAnnotationService {
 }

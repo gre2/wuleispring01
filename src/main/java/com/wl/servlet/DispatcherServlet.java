@@ -116,7 +116,7 @@ public class DispatcherServlet extends HttpServlet {
                 String beanName = autowired.value();
                 //WlAutowired标签没有自己设置值，默认首字母小写
                 if ("".equals(beanName)) {
-                    beanName = field.getType().getName();
+                    beanName = field.getType().getName();//com.wl.demo.service.TestService
                 }
                 field.setAccessible(true);
                 //第一个参数是实参，第二个参数是实例
@@ -161,7 +161,7 @@ public class DispatcherServlet extends HttpServlet {
                       三份如果实现类和接口名一样，两份，map对相同的key进行覆盖*/
                     Class<?>[] interfaces = clazz.getInterfaces();
                     for (Class<?> i : interfaces) {
-                        this.ioc.put(i.getName(), instance);
+                        this.ioc.put(i.getName(), instance);//i.getName=com.wl.demo.service.TestService
                     }
                 } else {
                     continue;
